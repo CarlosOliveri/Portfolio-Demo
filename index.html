@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="mi-nombre">Carlos Oliveri <span>Freelancer</span></h1>
+        <h1>Carlos Oliveri <span>Freelancer</span></h1>
     </header>
     <nav class="nav-bar">
             <a href="#">Inicio</a>
@@ -22,42 +22,35 @@
             <a href="#">Clientes</a>
             <a href="#">Contactos</a>
     </nav>
-    <!-- <div class="header__footer-container"> -->
-        <!-- <div class="header__footer__image-container">
-            <img src="img/hero.jpg" alt="banner de escritorio" class="header__image-container__image">
-        </div> -->
-        <section class="header__footer__text">
+    <section class="header__banner-container">
+        <div class="header__banner-container__text">
             <h2>Diseño y desarrollo Web Freelancer</h2>
-            <div class="header__footer__text__ubicacion">
-                <!--
-                    category: Map
-                    tags: [navigation, location, travel, pin, position, marker]
-                    version: "1.0"
-                    unicode: "eae8"
-                    -->
-                <svg
-                    class="ubicacion-logo"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="50"
-                    height="50"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#FFD43B"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    >
-                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-                </svg>
-                <p>Paraguay, Asunción<p>
-            </div>
-            <a href="#">Contactar</a>
-        </section>
-    <!-- </div> -->
+            <!--
+                category: Map
+                tags: [navigation, location, travel, pin, position, marker]
+                version: "1.0"
+                unicode: "eae8"
+                -->
+            <p><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FFD43B"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                >
+                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+            </svg>Paraguay, Asunción</p>
+            <a class="boton" href="#">Contactar</a>
+        </div>
+    </section>
     <main>
         <h2>Servicios</h2>
-        <div class="servicios__section">
+        <div class="servicios">
             <section>
                 <h3>Diseño Web</h3>
                 <div class="servicios__icon">
@@ -167,35 +160,37 @@
             </section>
         </div>
 
+        <section>
+            <h2>Contacto</h2>
+            <form class="formulario" action="">
+                <fieldset>
+                    <legend>Contactanos llenando todos los campos</legend>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input class="input-text" type="text" placeholder="Nombre">
+                        </div>
+                        <div class="campo">
+                            <label>Telefono</label>
+                            <input class="input-text" type="tel" placeholder="Telefono">
+                        </div>
+                        <div class="campo">
+                            <label>E-mail</label>
+                            <input class="input-text" type="email" placeholder="Correo electronico">
+                        </div>
+                        <div class="campo">
+                            <label>Mensaje</label>
+                            <textarea class="input-text" name="" id=""></textarea>
+                        </div>
+                        <div class="flex alinear-derecha">
+                            <input class="boton w-sm-100" type="submit" value="Enviar">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
     </main>
-    <section>
-        <h2>Contacto</h2>
-        <form action="">
-            <fieldset>
-                <legend>Contactanos llenando todos los campos</legend>
-                <div>
-                    <label>Nombre</label>
-                    <input type="text" placeholder="Nombre">
-                </div>
-                <div>
-                    <label>Telefono</label>
-                    <input type="tel" placeholder="Telefono">
-                </div>
-                <div>
-                    <label>E-mail</label>
-                    <input type="email" placeholder="Correo electronico">
-                </div>
-                <div>
-                    <label>Mensaje</label>
-                    <textarea name="" id=""></textarea>
-                </div>
-                <div>
-                    <input type="submit" value="Enviar">
-                </div>
-            </fieldset>
-        </form>
-    </section>
-    <footer>
+    <footer class="footer">
         <p>Todos los derechos reservados. Juan De la Torre Freelancer</p>
     </footer>
 </body>

@@ -3,39 +3,56 @@
     --ocuro: #212121;
     --primario: #FFc107; 
     --secundario: #0097A7;
-    --gris: #757575;   
+    --gris: #757575;  
+    --grisClaro:#DFE9F3; 
 
     --fuente: "Krub", sans-serif;
 }
 
 html{
     font-size: 62.5%;
-    box-sizing: border-box;
+    box-sizing: border-box; /*hack para boxmodel*/
+    scroll-snap-type: y mandatory; /*para scroll snap*/
 }
 
 *, *:bfore, *:after{
-    box-sizing: inherit;
+    box-sizing: inherit; /*hack para boxmodel*/
 }
 
 body{
-    font-size: 16px;
+    font-size: 16px; /* 1rem = 16px */
     padding: 0;
     margin: 0;
-    background-color: rgb(210, 233, 225);
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 
-.mi-nombre{
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+    font-family: var(--fuente);
+}
+
+.header h1{
     margin: 0;
     padding: 1rem 0;
     color: #000;
     font-family: var(--fuente);
-    font-size: 3.8rem;
     font-weight: bold;
     text-align: center;
-    background-color: var(--blanco);
 }
 
-.mi-nombre span{
+.header span{
     font-size: 2rem;
 }
 
@@ -78,28 +95,7 @@ body{
     }
 }
 
-.header_image{
-    width: 100%;
-    height: 30rem;
-    background-position: center;
-}
-
-.header__footer__image-container{
-    width: 100%;
-    height: 300px;
-    overflow-y: hidden;
-}
-
-.header__image-container__image{
-    width: 100%;
-    height: auto;
-}
-
-.header__footer-container{
-    position: relative;
-}
-
-.header__footer__text{
+.header__banner-container{
     width: 100%;
     height: 300px;
     background-color: rgba(0, 6, 8, 0.61);
@@ -114,81 +110,201 @@ body{
     top: 0;*/
 }
 
-.ubicacion-logo{
-    position: relative;
-    top: -1.5rem;
-}
-
-.header__footer__text h2{
+.header__banner-container__text{
     color: var(--blanco);
     font-family: var(--fuente);
-    font-size: 20px;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 6, 8, 0.678);
 
-}
-
-.header__footer__text__ubicacion{
-    margin-top: 2.5rem;
     display: flex;
-    flex-direction: row;
-    color: var(--blanco);
-    font-family: var(--fuente);
-    font-size: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.header__footer__text a{
-    background-color: var(--secundario);
-    padding: 0.5rem 2rem;
-    border-radius: 0.3rem;
-    text-decoration: none;
+.header__banner-container h2{
     color: var(--blanco);
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 80%;
+    text-align: center;
     font-family: var(--fuente);
-    font-size: 15px;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+    
+}
+
+.boton:hover{
+    background-color: var(--primario);
+    color: var(--ocuro);
+    cursor: pointer;
+}
+
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
 }
 
 main{
-    margin: 1.5rem 25rem 0 25rem;
-    padding: 2rem 5rem 0 5rem;
+    margin: 1.5rem 15% 0 15%;
+    padding: 2rem 5rem 2rem 5rem;
     border-radius: 0.5rem;
-    box-shadow: var(--blanco) 0 10px 20px -5px, #000 0 6px 6px -5px;
+    box-shadow: var(--ocuro) 0 10px 20px -5px, #000 0 6px 6px -5px;
     background-color: var(--blanco);
 }
 
 main h2{
     margin: 0;
+    margin-bottom: 2rem;
     text-align: center;
     font-family: var(--fuente);
 }
 
-.servicios__section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.servicios, .nav-bar, .formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
-.servicios__section section{
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1rem;;
+    }
+    
+}
+
+.servicios section{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
+    margin-bottom: 1rem;
 }
 
-.servicios__section section h3{
-    font-family: var(--fuente);
+.servicios section h3{
+    font-family: var(--secundario);
+    font-weight: 400;
 }
 
-.servicios__section section p{
+.servicios section p{
     font-family: var(--fuente);
+    line-height: 2;
+    text-align: center;
 }
 
 .servicios__icon{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: var(--primario);
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50px;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
 }
 
+.formulario{
+    background-color: var(--gris);
+    /*width: min(60rem, 100%);*/ /*utiliza el valor mas pequeño*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.formulario fieldset{
+    border: none;
+    padding: 0;
+}
+
+.formulario legend{
+    color: var(--primario);
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-family: var(--fuente);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        grid-template-rows: auto auto 20rem;
+    }
+    
+    .campo:nth-child(3){
+        grid-column: 1 / 3; /* Ocupa toda la fila */
+    }
+    .campo:nth-child(4){
+        grid-row: 3 / 4;
+        grid-column: 1 / 3; /* Ocupa toda la fila */
+    }
+
+    .flex{
+        grid-column: 1 / 3;;
+    }
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo textarea{
+    height: 15rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: 700;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem .3rem;
+    border-radius: .5rem;
+}
+
+.enviar .boton{
+    width: 100%;
+}
+
+.footer{
+    text-align: center;
+    margin-top: 5rem;
+}
